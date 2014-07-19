@@ -25,6 +25,8 @@
         
         cvc.color = c.textColor;
         cvc.text = c.text;
+        cvc.wantsCustomAnimation = YES;
+        NSLog(@"Set the custom animation flag to YES");
     }
 
     // configure the segue.
@@ -41,6 +43,7 @@
         {
             UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:dvc];
             [rvc pushFrontViewController:nc animated:YES];
+            
         };
     }
 }

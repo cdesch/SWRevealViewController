@@ -7,11 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "SWRevealViewController.h"
+#import "ColorViewController.h"
+#import "CustomAnimationController.h"
 
+@interface AppDelegate()<SWRevealViewControllerDelegate>
+@end
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+    SWRevealViewController *swrvc = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+    
+    swrvc.delegate = self;
     // Override point for customization after application launch.
     return YES;
 }
@@ -60,4 +70,28 @@
     //[self.window makeKeyAndVisible];
     return YES;
 }
+
+
+- (id <UIViewControllerAnimatedTransitioning>)revealController:(SWRevealViewController *)revealController animationControllerForOperation:(SWRevealControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    //if ( operation != SWRevealControllerOperationReplaceRightController )
+    //  return nil;
+    
+    NSString *className = NSStringFromClass([toVC class]);
+    
+    NSLog(@"delegate method class name %@ ", className);
+    if ( [toVC isKindOfClass:[ColorViewController class]] )
+    {
+
+        if ( [(ColorViewController*)toVC wantsCustomAnimation] )
+        {
+
+            id<UIViewControllerAnimatedTransitioning> animationController = [[ColorViewController alloc] init];
+            return animationController;
+        }
+    }
+    
+    return nil;
+}
+
 @end

@@ -24,6 +24,7 @@
 		01FB86AD169E3CE700A0A1A8 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB86AA169E3CE700A0A1A8 /* reveal-icon.png */; };
 		01FB86AE169E3CE700A0A1A8 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB86AB169E3CE700A0A1A8 /* reveal-icon@2x.png */; };
 		01FB86B0169E42B600A0A1A8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB86AF169E42B600A0A1A8 /* MapKit.framework */; };
+		23621F2A197ACF3B0009FA28 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23621F29197ACF3B0009FA28 /* CustomAnimationController.m */; };
 		91090B7D1790ED680090B501 /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91090B7B1790ED680090B501 /* MainStoryboard-iPad.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		01FB86AA169E3CE700A0A1A8 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		01FB86AB169E3CE700A0A1A8 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		01FB86AF169E42B600A0A1A8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		23621F28197ACF3B0009FA28 /* CustomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationController.h; sourceTree = "<group>"; };
+		23621F29197ACF3B0009FA28 /* CustomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationController.m; sourceTree = "<group>"; };
 		91090B7C1790ED680090B501 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/MainStoryboard-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +106,8 @@
 		01FB866F169E2D8B00A0A1A8 /* RevealControllerStoryboardExample */ = {
 			isa = PBXGroup;
 			children = (
+				23621F28197ACF3B0009FA28 /* CustomAnimationController.h */,
+				23621F29197ACF3B0009FA28 /* CustomAnimationController.m */,
 				91090B7A1790ED0B0090B501 /* iPad */,
 				01FB8678169E2D8B00A0A1A8 /* AppDelegate.h */,
 				01FB8679169E2D8B00A0A1A8 /* AppDelegate.m */,
@@ -226,6 +231,7 @@
 				01FB868F169E2DA500A0A1A8 /* SWRevealViewController.m in Sources */,
 				01FB869D169E364800A0A1A8 /* MenuViewController.m in Sources */,
 				01FB86A4169E36FE00A0A1A8 /* MapViewController.m in Sources */,
+				23621F2A197ACF3B0009FA28 /* CustomAnimationController.m in Sources */,
 				01FB86AC169E3CE700A0A1A8 /* ColorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

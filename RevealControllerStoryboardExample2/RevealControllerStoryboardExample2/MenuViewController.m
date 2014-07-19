@@ -20,11 +20,17 @@
     if ( [segue.destinationViewController isKindOfClass: [ColorViewController class]] &&
         [sender isKindOfClass:[UITableViewCell class]] )
     {
+        
+        
         UILabel* c = [(SWUITableViewCell *)sender label];
         ColorViewController* cvc = segue.destinationViewController;
         
         cvc.color = c.textColor;
         cvc.text = c.text;
+        cvc.wantsCustomAnimation = YES;
+        
+                    NSLog(@"SegueB");
+    
     }
 
     // configure the segue.
@@ -41,6 +47,8 @@
         {
             UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:dvc];
             [rvc pushFrontViewController:nc animated:YES];
+            
+            
         };
     }
 }
@@ -54,11 +62,18 @@
         UILabel* c = [(SWUITableViewCell *)sender label];
         UINavigationController *navController = segue.destinationViewController;
         ColorViewController* cvc = [navController childViewControllers].firstObject;
+        
+
         if ( [cvc isKindOfClass:[ColorViewController class]] )
         {
             cvc.color = c.textColor;
             cvc.text = c.text;
+            cvc.wantsCustomAnimation = YES;
+            
+            NSLog(@"Segue");
         }
+        
+
     }
 }
 

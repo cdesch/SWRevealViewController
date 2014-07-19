@@ -12,6 +12,7 @@
 		01FB866E169E2D8B00A0A1A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB866D169E2D8B00A0A1A8 /* CoreGraphics.framework */; };
 		01FB868F169E2DA500A0A1A8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB868E169E2DA500A0A1A8 /* SWRevealViewController.m */; };
 		01FB86B0169E42B600A0A1A8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB86AF169E42B600A0A1A8 /* MapKit.framework */; };
+		23621F27197ACB240009FA28 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23621F26197ACB240009FA28 /* CustomAnimationController.m */; };
 		4E00E29719659277007CA70B /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE902391964A22200AA3B42 /* MainStoryboard-iPad.storyboard */; };
 		4EE9022C1964A14200AA3B42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9022A1964A14200AA3B42 /* AppDelegate.m */; };
 		4EE902341964A1DE00AA3B42 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE902301964A1DE00AA3B42 /* MenuViewController.m */; };
@@ -35,6 +36,8 @@
 		01FB868D169E2DA500A0A1A8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		01FB868E169E2DA500A0A1A8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		01FB86AF169E42B600A0A1A8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		23621F25197ACB240009FA28 /* CustomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationController.h; sourceTree = SOURCE_ROOT; };
+		23621F26197ACB240009FA28 /* CustomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationController.m; sourceTree = SOURCE_ROOT; };
 		4EE9022A1964A14200AA3B42 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RevealControllerStoryboardExample2/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		4EE9022B1964A14200AA3B42 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RevealControllerStoryboardExample2/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		4EE9022D1964A15800AA3B42 /* RevealControllerStoryboardExample2-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RevealControllerStoryboardExample2-Prefix.pch"; path = "RevealControllerStoryboardExample2/RevealControllerStoryboardExample2-Prefix.pch"; sourceTree = SOURCE_ROOT; };
@@ -103,6 +106,8 @@
 		01FB866F169E2D8B00A0A1A8 /* RevealControllerStoryboardExample */ = {
 			isa = PBXGroup;
 			children = (
+				23621F25197ACB240009FA28 /* CustomAnimationController.h */,
+				23621F26197ACB240009FA28 /* CustomAnimationController.m */,
 				91090B7A1790ED0B0090B501 /* iPad */,
 				4EE9022B1964A14200AA3B42 /* AppDelegate.h */,
 				4EE9022A1964A14200AA3B42 /* AppDelegate.m */,
@@ -226,6 +231,7 @@
 				4EE902341964A1DE00AA3B42 /* MenuViewController.m in Sources */,
 				4EE902421964A25D00AA3B42 /* ColorViewController.m in Sources */,
 				4EE9024E1964A29300AA3B42 /* main.m in Sources */,
+				23621F27197ACB240009FA28 /* CustomAnimationController.m in Sources */,
 				4EE9022C1964A14200AA3B42 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
