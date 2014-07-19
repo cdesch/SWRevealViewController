@@ -781,6 +781,22 @@ const int FrontViewPositionNone = 0xff;
 }
 
 
+- (void)popFrontViewController:(UIViewController *)frontViewController animated:(BOOL)animated
+{
+    if ( ![self isViewLoaded])
+    {
+        [self _setFrontViewController:frontViewController animated:NO];
+        NSLog(@"here2");
+        return;
+    }
+    
+    NSLog(@"here");
+    
+    [self _dispatchPopFrontViewController:frontViewController animated:animated];
+}
+
+
+
 - (void)setRearViewController:(UIViewController *)rearViewController
 {
     [self setRearViewController:rearViewController animated:NO];
@@ -1365,6 +1381,35 @@ const int FrontViewPositionNone = 0xff;
     }
 }
 
+- (void)_dispatchPopFrontViewController:(UIViewController *)newFrontViewController animated:(BOOL)animated
+{
+    FrontViewPosition preReplacementPosition = FrontViewPositionRight;
+    if ( _frontViewPosition > FrontViewPositionRight ) preReplacementPosition = FrontViewPositionLeftSideMost;
+    if ( _frontViewPosition < FrontViewPositionRight ) preReplacementPosition = FrontViewPositionRightMost;
+    
+    NSTimeInterval duration = animated?_toggleAnimationDuration:0.0;
+    NSTimeInterval firstDuration = duration;
+    int initialPosDif = abs( _frontViewPosition - preReplacementPosition );
+    if ( initialPosDif == 1 ) firstDuration *= 0.8;
+    else if ( initialPosDif == 0 ) firstDuration = 0;
+
+
+    
+    
+    __weak SWRevealViewController *theSelf = self;
+    if ( animated )
+    {
+        _enqueue( [theSelf _setFrontViewPosition:preReplacementPosition withDuration:firstDuration] );
+        _enqueue( [theSelf _setFrontViewController:newFrontViewController animated:NO] );  // do not animate this
+        _enqueue( [theSelf _setFrontViewPosition:FrontViewPositionLeft withDuration:duration] );
+    }
+    else
+    {
+        _enqueue( [theSelf _setFrontViewController:newFrontViewController animated:NO] );
+    }
+}
+
+
 
 - (void)_dispatchSetRearViewController:(UIViewController *)newRearViewController animated:(BOOL)animated
 {
@@ -1906,6 +1951,20 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
 }
 
 @end
+
+#pragma mark - SWRevealViewControllerSeguePopController class
+
+@implementation SWRevealViewControllerSeguePopController
+
+- (void)perform
+{
+    SWRevealViewController *rvc = [self.sourceViewController revealViewController];
+    UIViewController *dvc = self.destinationViewController;
+    [rvc popFrontViewController:dvc animated:YES];
+}
+
+@end
+
 
 
 #pragma mark - SWRevealViewControllerSegue Class

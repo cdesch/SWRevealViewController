@@ -77,6 +77,8 @@
 
 - (id <UIViewControllerAnimatedTransitioning>)revealController:(SWRevealViewController *)revealController animationControllerForOperation:(SWRevealControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
+    
+    NSLog(@"here");
     if ( operation != SWRevealControllerOperationReplaceRightController )
         return nil;
     

@@ -19,9 +19,18 @@
 {
     
     UIStoryboard *storyboard = self.window.rootViewController.storyboard;
-    SWRevealViewController *swrvc = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+//    SWRevealViewController *swrvc = [storyboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
     
-    swrvc.delegate = self;
+    //SWRevealViewController *swrvc =  [storyboard instantiateInitialViewController];
+    
+    //swrvc.delegate = self;
+    
+    SWRevealViewController *controller = (SWRevealViewController *)self.window.rootViewController;
+    
+    controller.delegate = self;
+    //controller.managedObjectContext = self.managedObjectContext;
+    
+
     // Override point for customization after application launch.
     return YES;
 }

@@ -8,11 +8,19 @@
 
 #import "MenuViewController.h"
 #import "ColorViewController.h"
+#import "SWRevealViewController.h"
+#import "CustomAnimationController.h"
 
 @implementation SWUITableViewCell
 @end
 
 @implementation MenuViewController
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+   // self.revealViewController.delegate = self;
+}
 
 - (void) prepareForSegueB: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -29,7 +37,7 @@
         cvc.text = c.text;
         cvc.wantsCustomAnimation = YES;
         
-                    NSLog(@"SegueB");
+    NSLog(@"SegueB");
     
     }
 
@@ -62,7 +70,7 @@
         UILabel* c = [(SWUITableViewCell *)sender label];
         UINavigationController *navController = segue.destinationViewController;
         ColorViewController* cvc = [navController childViewControllers].firstObject;
-        
+    
 
         if ( [cvc isKindOfClass:[ColorViewController class]] )
         {
@@ -75,6 +83,9 @@
         
 
     }
+    
+   
+
 }
 
 
@@ -136,5 +147,7 @@
     
     // TODO call whatever function you need to visually restore
 }
+
+
 
 @end

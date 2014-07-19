@@ -405,6 +405,10 @@ extern NSString* const SWSegueRightIdentifier;
 @interface SWRevealViewControllerSeguePushController : UIStoryboardSegue
 @end
 
+// Use this to pop a view controller
+@interface SWRevealViewControllerSeguePopController : UIStoryboardSegue
+@end
+
 
 #pragma mark - SWRevealViewControllerSegue (DEPRECATED)
 
